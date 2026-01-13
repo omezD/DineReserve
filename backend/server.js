@@ -1,0 +1,9 @@
+import app from "./app.js";
+
+import { dbConnection } from "./database/dbConnection.js";
+
+dbConnection();
+
+app.listen(process.env.PORT, () => {
+  console.log(`SERVER HAS STARTED AT PORT ${process.env.PORT}`);
+});
