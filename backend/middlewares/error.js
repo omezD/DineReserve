@@ -6,24 +6,28 @@ class ErrorHandler extends Error {
 }
 
 export const errorMiddleware = (err, req, res, next) => {
-  err.message = err.message || "Internal Server Error";
-  err.statusCode = err.statusCode || 500;
+  let error = err;
 
-  if (err.name === "CastError") {
-    const message = `Resource not found. Invalid: ${err.path}`;
-    err = new ErrorHandler(message, 400);
+  error.message = error.message || "Internal Server Error";
+  error.statusCode = error.statusCode || 500;
+
+  // Wrong MongoDB ID error
+  if (error.name === "CastError") {
+    const message = `Resource not found. Invalid: ${error.path}`;
+    error = new ErrorHandler(message, 400);
   }
 
-
-  if (err.name === 'ValidationError') {
-    const validationErrors = Object.values(error.errors).map(err => err.message);
-    return next(new ErrorHandler(validationErrors.join(', '), 400));
+  // Mongoose validation error
+  if (error.name === "ValidationError") {
+    const validationErrors = Object.values(error.errors).map(
+      (item) => item.message
+    );
+    error = new ErrorHandler(validationErrors.join(", "), 400);
   }
 
-
-  return res.status(err.statusCode).json({
+  return res.status(error.statusCode).json({
     success: false,
-    message: err.message,
+    message: error.message,
   });
 };
 
