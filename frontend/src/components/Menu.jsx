@@ -30,7 +30,7 @@ const Menu = () => {
           <div className="dishes_container">
             {data[0].dishes.map((element) => (
               <div className="card" key={element.id}>
-                <img src={imageMap[element.image]} alt={element.title} />
+                <img src={imageMap[element.image]  || imageMap.lamb} alt={element.title} loading="lazy" />
                 <h3>{element.title}</h3>
                 <button>{element.category}</button>
               </div>
