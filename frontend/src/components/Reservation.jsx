@@ -20,14 +20,13 @@ const Reservation = () => {
 const handleReservation = async (e) => {
   e.preventDefault();
   try {
-    const { data } = await axios.post(
-      `${API}/api/v1/reservation/send`,
-      { firstName, lastName, email, phone, date, time },
-      {
-        headers: { "Content-Type": "application/json" },
-      }
-    );
-
+   const { data } = await axios.post(
+  "https://dinereserve-dw2e.onrender.com/api/v1/reservation/send",
+  { firstName, lastName, email, phone, date, time },
+  {
+    headers: { "Content-Type": "application/json" },
+  }
+);
     toast.success(data.message);
     setFirstName("");
     setLastName("");
