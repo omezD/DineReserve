@@ -1,3 +1,4 @@
+const API = import.meta.env.VITE_API_URL;
 import React from "react";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import axios from "axios";
@@ -15,32 +16,30 @@ const Reservation = () => {
   const [phone, setPhone] = useState(0);
   const navigate = useNavigate();
 
-  const handleReservation = async (e) => {
-    e.preventDefault();
-    try {
-   const { data } = await axios.post(
-  "http://localhost:5000/api/v1/reservation/send",
-  { firstName, lastName, email, phone, date, time },
-  {
-    headers: { "Content-Type": "application/json" },
-    withCredentials: true,
-  }
-);
-      toast.success(data.message);
-      setFirstName("");
-      setLastName("");
-      setPhone(0);
-      setEmail("");
-      setTime("");
-      setDate("");
-      navigate("/success");
-    } catch (error) {
-      toast.error(
-  error?.response?.data?.message || "Reservation failed"
-);
 
-    }
-  };
+const handleReservation = async (e) => {
+  e.preventDefault();
+  try {
+    const { data } = await axios.post(
+      `${API}/api/v1/reservation/send`,
+      { firstName, lastName, email, phone, date, time },
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    );
+
+    toast.success(data.message);
+    setFirstName("");
+    setLastName("");
+    setPhone(0);
+    setEmail("");
+    setTime("");
+    setDate("");
+    navigate("/success");
+  } catch (error) {
+    toast.error(error?.response?.data?.message || "Reservation failed");
+  }
+};
 
   return (
     <section className="reservation" id="reservation">
