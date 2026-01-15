@@ -74,7 +74,7 @@
             {
                 "id": 1,
                 "image": "./team_member_1.png",
-                "name": "JOHNATHAN TYLER",
+                "name": "Ravichandran ashwin",
                 "designation": "Founder & Head Chef"
             },
             {
@@ -100,23 +100,26 @@
             {
                 "id": 1,
                 "image": "./review1.png",
-                "description": "Morbi nulla nec dui lacus, in. Libero in pretium metus massa. Sodales dignissim vitae mauris varius faucibus. Eleifend dui, non laoreet ac luctus facilisis diam. Enim scelerisque vel at id viverra tellus.",
+                 "title": "A perfect place for family dinners.",
+                "description": "Great ambience, quick service, and dishes that taste as good as they look. We’ll definitely be coming back again.",
                 "rating": 4,
-                "userName": "Jane Cooper"
+                "userName": "Anjali Arora"
             },
             {
                 "id": 2,
                 "image": "./review2.png",
-                "description": "Tortor vel nunc netus pharetra enim, enim dolor mauris in. Sit nam fringilla in egestas. Libero condimentum quis in vulputate adipiscing venenatis augue. Venenatis faucibus.",
+                "title": "Absolutely loved the experience!",
+                "description": "The food was fresh, flavorful, and beautifully presented. The reservation process was smooth, and the staff made us feel truly welcome..",
                 "rating": 4.5,
-                "userName": "Esther Howard"
+                "userName": "Shreya Thakur"
             },
             {
                 "id": 3,
                 "image": "./review3.png",
-                "description": "Tortor vel nunc netus pharetra enim, enim dolor mauris in. Sit nam fringilla in egestas. Libero condimentum quis in vulputate adipiscing venenatis augue. Venenatis faucibus.",
+                 "title": "One of the best dining experiences in the city",
+                "description": "From the starters to the desserts, everything was top-notch. Booking a table was super easy and hassle-free.",
                 "rating": 5,
-                "userName": "Guy Hawkins"
+                "userName": "Amrita Dhattalia"
             }
         ],
         "who_we_are": [
@@ -156,11 +159,6 @@
                 "id": 3,
                 "title": "SERVICES",
                 "link": "qualities"
-            },
-            {
-                "id": 4,
-                "title": "TEAM",
-                "link": "team"
             },
             {
                 "id": 5,

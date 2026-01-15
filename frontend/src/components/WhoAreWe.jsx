@@ -1,39 +1,41 @@
-import React from 'react'
-import {data} from '../restApi.json'
+import React from 'react';
+import { data } from '../restApi.json';
+
+import chef from "../assets/who/chef.jpg";
+import food from "../assets/who/food.jpg";
+import resturent from "../assets/who/resturent.jpg";
+import fourth from "../assets/who/fourth.jpg";
+
+const images = [chef, food, resturent, fourth];
 
 const WhoAreWe = () => {
   return (
-    <>
-      <section className='who_are_we' id='who_are_we'>
-        <div className="container">
-          <div className="text_banner">
-            {
-              data[0].who_we_are.slice(0,2).map(element=>(
-                <div className="card" key={element.id}>
-                  <h1 className='heading' style={{fontWeight: "300"}}>{element.number}</h1>
-                  <p>{element.title}</p>
-                </div>
-              ))
-            }
-          </div>
-          <div className="image_banner">
-            <img className='gradient_bg' src="center.svg" alt="gradientBg" />
-            <img src="whoweare.png" alt="food" />
-          </div>
-          <div className="text_banner">
-            {
-              data[0].who_we_are.slice(2).map(element=>(
-                <div className="card" key={element.id}>
-                  <h1 className='heading' style={{fontWeight: "300"}}>{element.number}</h1>
-                  <p>{element.title}</p>
-                </div>
-              ))
-            }
-          </div>
-        </div>
-        </section> 
-    </>
-  )
-}
+    <section className="who_are_we" id="who_are_we">
+      <div className="container">
 
-export default WhoAreWe
+        <div className="who_header">
+          <h1 className="heading">Who We Are</h1>
+          <p>
+            Passionate about food, dedicated to quality, and driven by the joy
+            of serving unforgettable dining experiences.
+          </p>
+        </div>
+
+        <div className="who_grid">
+          {data[0].who_we_are.map((element, index) => (
+            <div className="who_card" key={element.id}>
+              <div className="who_image">
+                <img src={images[index]} alt={element.title} />
+              </div>
+              <h2>{element.number}</h2>
+              <p>{element.title}</p>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default WhoAreWe;

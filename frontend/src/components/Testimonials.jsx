@@ -1,5 +1,6 @@
 import React from "react";
 import { data } from "../restApi.json";
+import model3 from "../assets/testimonials/model3.jpg";
 
 const Testimonials = () => {
   return (
@@ -14,22 +15,20 @@ const Testimonials = () => {
         </div>
 
         <div className="testimonial_container">
-          {data[0].team.map((item) => (
+          {data[0].testimonials.map((item) => (
             <div className="testimonial_card" key={item.id}>
               <div className="profile">
-                <img src={item.image} alt={item.name} />
+                <h4>{item.userName}</h4>
+                <img src={model3} alt={item.name} />
               </div>
-
-              <p className="review">
-                “Amazing food and great service. The ambience was perfect and
-                the staff was extremely friendly.”
-              </p>
 
               <div className="info">
-                <h3>{item.name}</h3>
-                <span>{item.designation}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <span>{item.descriptionion}</span>
               </div>
             </div>
+            
           ))}
         </div>
       </div>
