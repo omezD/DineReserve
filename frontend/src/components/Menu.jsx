@@ -9,15 +9,16 @@ import soup from "../assets/dishes/soup.jpg";
 import spaghetti from "../assets/dishes/spaghetti.jpg";
 import strawberry from "../assets/dishes/strawberry.jpg";
 const imageMap = {
-  lamb,
-  salmon,
-  seabass,
-  burger,
-  fish,
-  strawberry,
-  spaghetti,
-  soup,
+  "./dinner1.jpeg": lamb,
+  "./dinner2.png": salmon,
+  "./breakfast1.png": seabass,
+  "./dinner3.png": strawberry,
+  "./lunch1.png": burger,
+  "./dinner4.png": soup,
+  "./dinner5.png": spaghetti,
+  "./dinner6.png": fish,
 };
+
 const Menu = () => {
   return (
     <>
